@@ -4,5 +4,5 @@ A curated database of Heusler alloys and their predicted 2D equivalents, "Heusle
 
 ## 📊 Visualizations
 
-[View PBE+SOC Bandstructures](https://sriharikastuar.github.io/Hueslerene/Figures-PBE-SOC-BandStructure/gallery.html)
+[View PBE+SOC Bandstructures](https://sriharikastuar.github.io/Heuslerene/Figures-PBE-SOC-BandStructure/gallery.html)
 
