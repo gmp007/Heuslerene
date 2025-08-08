@@ -18,9 +18,6 @@ import functools
 import dash_bootstrap_components as dbc
 import re
 
-SEED = 42
-np.random.seed(SEED)
-
 # ── 1) Paths & dropdown options ────────────────────────────────────────────────
 CSV_DIR = Path(os.path.join(".", "fingerprints"))
 print(os.getcwd())
@@ -166,7 +163,12 @@ app.layout = html.Div([
     html.Div([
         dcc.Graph(
             id="umap-plot", config={"scrollZoom":True},
-            style={"height":"650px","width":"70%","display":"inline-block"}
+            style={
+                "height": "650px",
+                "width": "70%",
+                "minWidth": "calc(650px / 2)",  # = 325px
+                "display": "inline-block"
+            }
         ),
         dcc.Store(id="latent-store"),
         dcc.Store(id="adv-visible", data=False),
@@ -176,13 +178,19 @@ app.layout = html.Div([
         html.Img(
             id="hover-image",
             style={
-                "width":"300px","height":"auto",
-                "display":"inline-block","verticalAlign":"top",
-                "marginLeft":"16px"
+                "width": "auto",
+                "height": "auto",
+                "maxWidth": "420px",   # cap, adjust as you like
+                "maxHeight": "80vh",
+                "objectFit": "contain",
+                "imageRendering": "crisp-edges",  # or "pixelated" for razor-sharp pixels
+                "display": "inline-block",
+                "verticalAlign": "top",
+                "marginLeft": "16px",
             }
         ),
         html.Div(id="recluster-popup", style={"display": "none"})
-    ]),
+    ], style={"display":"flex", "flexDirection":"row"}),
     html.Button("Open Welcome Message", id="open-welcome-btn", n_clicks=0),
     html.Button(id="close-on-outside-click", style={"display": "none"}),
 
