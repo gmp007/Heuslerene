@@ -6,7 +6,7 @@ A curated database of Heusler alloys and their predicted 2D equivalents, "Heusle
 - **Crystal Data/**
     - **cystal-structures/** contains the VASP CONTCAR files for the Heuslerenes studied
     - **EIGENVALs/** contains the VASP EIGENVAL files for the Hueslerenes studied
-    - **FERMI_ENERGYs/** contains the Fermi energy values for the Heuslerenes studied. Necessary to create an electronic band shifted to the Fermi energy.
+    - **FERMI_ENERGYs/** contains the Fermi energy values at PBE+SOC for the Heuslerenes studied.
     - **Figures-PBE-SOC-BandStructure** contains images of the band structures. These can also be explored in the link below.
 - **explorer/** contains a web application for exploring the band structures. A README.md file in this folder explains how to run it on your local system.
 
